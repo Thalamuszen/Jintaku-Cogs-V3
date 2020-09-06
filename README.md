@@ -1,3 +1,5 @@
+!!!Editing Booru cog to work alongside with predacogs NSFW cog!!!
+
 <img src="https://github.com/Jintaku/Jintaku-Cogs-V3/blob/master/screenshots/Jintaku-slide.png" width="100%">
 
 # Installation
@@ -9,8 +11,6 @@
 `[p]` is your prefix
 
 ## Booru (These all default to random safe images except in NSFW channels)
-
-!!!Editing cog to work alongside with predacogs NSFW cog!!!
 
 * `[p]booru <tags : optional>` - Displays images and their tags from various image boards
 * `[p]dan <tags : optional>` - Displays images and their tags from danbooru
