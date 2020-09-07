@@ -517,7 +517,7 @@ class Roleplay(BaseCog):
         
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
-    async def fuckself(self, ctx, *):
+    async def fuckself(self, ctx, *, user: discord.Member):
         """Fucks yourself!"""
 
         author = ctx.message.author
