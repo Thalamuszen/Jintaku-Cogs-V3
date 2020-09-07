@@ -247,6 +247,11 @@ class Roleplay(BaseCog):
                 "https://cdn.discordapp.com/attachments/670618563912007681/710796087006461972/SelfMercy6.gif",
                 "https://cdn.discordapp.com/attachments/670618563912007681/709732185359515658/SelfWidow.gif",
             ],
+            "goose": [
+                "https://cdn.discordapp.com/attachments/752524729470025788/752675168605831218/GooseHonk1.gif",
+                "https://cdn.discordapp.com/attachments/752524729470025788/752675169960722472/GooseHonk2.gif",
+                "https://cdn.discordapp.com/attachments/752524729470025788/752675174322798752/GooseWalk.gif",
+            ],
             "hugs": [
                 "https://img2.gelbooru.com/images/ff/63/ff63a3c4329fda2bf1e9704d4e150fea.gif",
                 "https://img2.gelbooru.com/images/2c/e8/2ce81403e0279f1a570711f7472b3abb.gif",
@@ -529,6 +534,23 @@ class Roleplay(BaseCog):
         embed = discord.Embed()
         embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} is fucking themselves.. lewd!**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+                
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def goose(self, ctx):
+        """HONK!"""
+
+        author = ctx.message.author
+        images = await self.config.goose()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**HONK**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
         
