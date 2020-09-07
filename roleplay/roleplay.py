@@ -24,6 +24,9 @@ class Roleplay(BaseCog):
     def __init__(self):
         self.config = Config.get_conf(self, identifier=842364413)
         default_global = {
+            "kiss": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248796276293652/KissGenjiMercy.gif",
+            ],
             "hugs": [
                 "https://img2.gelbooru.com/images/ff/63/ff63a3c4329fda2bf1e9704d4e150fea.gif",
                 "https://img2.gelbooru.com/images/2c/e8/2ce81403e0279f1a570711f7472b3abb.gif",
@@ -296,7 +299,26 @@ class Roleplay(BaseCog):
             ],
         }
         self.config.register_global(**default_global)
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def kiss(self, ctx, *, user: discord.Member):
+        """Kiss a user!"""
 
+        author = ctx.message.author
+        images = await self.config.kiss()
+
+        nekos = await self.fetch_nekos_life(ctx, "hug")
+        images.extend(nekos)
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} wants a kiss {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+        
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def hugs(self, ctx, *, user: discord.Member):
@@ -314,7 +336,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} hugs {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -335,7 +356,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} cuddles {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -356,7 +376,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} kisses {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -377,7 +396,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} slaps {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -398,7 +416,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} pats {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -415,7 +432,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} licks {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -432,7 +448,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} highfives {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -453,7 +468,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} feeds {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -474,7 +488,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} tickles {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -495,7 +508,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} pokes {user.mention}**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
@@ -516,7 +528,6 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} is smug**"
-        embed.set_footer(text="Made with the help of nekos.life")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
