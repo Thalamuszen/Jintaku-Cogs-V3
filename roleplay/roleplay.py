@@ -24,9 +24,6 @@ class Roleplay(BaseCog):
     def __init__(self):
         self.config = Config.get_conf(self, identifier=842364413)
         default_global = {
-            "kiss": [
-                "https://cdn.discordapp.com/attachments/670618563912007681/673248796276293652/KissGenjiMercy.gif",
-            ],
             "hugs": [
                 "https://img2.gelbooru.com/images/ff/63/ff63a3c4329fda2bf1e9704d4e150fea.gif",
                 "https://img2.gelbooru.com/images/2c/e8/2ce81403e0279f1a570711f7472b3abb.gif",
@@ -107,29 +104,7 @@ class Roleplay(BaseCog):
                 "https://cdn.weeb.sh/images/r1A77CZbz.gif",
             ],
             "kiss": [
-                "https://img2.gelbooru.com/images/72/3d/723d7b46a080e459321cb0a46fa4ff84.gif",
-                "https://img2.gelbooru.com/images/14/15/141537ae7a372f093e7d6996b16c245b.gif",
-                "https://img2.gelbooru.com/images/0d/f6/0df60e366022350bdaf7f49390ac90a9.gif",
-                "https://img2.gelbooru.com/images/41/07/41070fe3eff7262f9f607a0a307c9740.gif",
-                "https://img2.gelbooru.com/images/1c/67/1c670a0dc8ab6a43eb8b6781d78600ab.gif",
-                "https://img2.gelbooru.com/images/63/f5/63f5a9a4cf7a872d6982ae6e518d212e.gif",
-                "https://img2.gelbooru.com/images/a1/a8/a1a888b4f4c69e1dc493cbf66a3a855a.gif",
-                "https://img2.gelbooru.com/images/ca/67/ca67e314075bab7fde43bfc9686e7fde.gif",
-                "https://img2.gelbooru.com/images/28/45/2845a2ad83b4f207d7ccfbb98c3a1be6.gif",
-                "https://i.imgur.com/WYkVxW2.gif",
-                "https://i.imgur.com/xu104Xp.gif",
-                "https://i.imgur.com/8jcpBO7.gif",
-                "https://i.imgur.com/jmWGYh5.gif",
-                "https://i.imgur.com/Sg8Obai.gif",
-                "https://i.imgur.com/Pr06rra.gif",
-                "https://i.imgur.com/J8xgNpE.gif",
-                "https://i.imgur.com/gtIEfcS.gif",
-                "https://i.imgur.com/j3zdC5g.gif",
-                "https://cdn.weeb.sh/images/r1cB3aOwW.gif",
-                "https://cdn.weeb.sh/images/B1MJ2aODb.gif",
-                "https://cdn.weeb.sh/images/Hy-oQl91z.gif",
-                "https://cdn.weeb.sh/images/rJ6PWohA-.gif",
-                "https://cdn.weeb.sh/images/rJrCj6_w-.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248796276293652/KissGenjiMercy.gif",
                 "https://78.media.tumblr.com/7255f36b2c31fac77542e8fe6837b408/tumblr_mokq94dAXR1s05qslo1_500.gif",
             ],
             "slap": [
@@ -299,25 +274,6 @@ class Roleplay(BaseCog):
             ],
         }
         self.config.register_global(**default_global)
-    @commands.command()
-    @commands.bot_has_permissions(embed_links=True)
-    async def kiss(self, ctx, *, user: discord.Member):
-        """Kiss a user!"""
-
-        author = ctx.message.author
-        images = await self.config.kiss()
-
-        nekos = await self.fetch_nekos_life(ctx, "hug")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
-
-        # Build Embed
-        embed = discord.Embed()
-        embed.description = f"**{author.mention} wants a kiss {user.mention}**"
-        embed.set_image(url=images[i])
-        await ctx.send(embed=embed)
         
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
