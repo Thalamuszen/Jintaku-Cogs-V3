@@ -252,6 +252,17 @@ class Roleplay(BaseCog):
                 "https://cdn.discordapp.com/attachments/752524729470025788/752675169960722472/GooseHonk2.gif",
                 "https://cdn.discordapp.com/attachments/752524729470025788/752675174322798752/GooseWalk.gif",
             ],
+            "dance": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992383179915302/DanceDva.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992387978330112/DanceDva2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992399420391484/DanceSymmetra.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992399516598277/DanceReaper.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992404033994758/DanceDva3.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992406898835456/DanceTracer.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675437068893290526/DanceWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675437069648134176/DanceWidow2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675437070508097536/DanceGirls.gif",
+            ],
             "hugs": [
                 "https://img2.gelbooru.com/images/ff/63/ff63a3c4329fda2bf1e9704d4e150fea.gif",
                 "https://img2.gelbooru.com/images/2c/e8/2ce81403e0279f1a570711f7472b3abb.gif",
@@ -553,7 +564,24 @@ class Roleplay(BaseCog):
         embed.description = f"**HONK**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
-        
+    
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def dance(self, ctx, *, user: discord.Member):
+        """Dance with somebody!"""
+
+        author = ctx.message.author
+        images = await self.config.dance()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} wants to dance with {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+           
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def hugs(self, ctx, *, user: discord.Member):
