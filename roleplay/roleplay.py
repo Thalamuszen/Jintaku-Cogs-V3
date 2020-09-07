@@ -24,6 +24,10 @@ class Roleplay(BaseCog):
     def __init__(self):
         self.config = Config.get_conf(self, identifier=842364413)
         default_global = {
+            "fuck": [
+                "https://cdn.discordapp.com/attachments/610429582415364116/670260329736830986/ezgif.com-video-to-gif.gif",
+                "https://cdn.discordapp.com/attachments/610429582415364116/670289020365963264/BrigDoggy.gif",
+            ],
             "hugs": [
                 "https://img2.gelbooru.com/images/ff/63/ff63a3c4329fda2bf1e9704d4e150fea.gif",
                 "https://img2.gelbooru.com/images/2c/e8/2ce81403e0279f1a570711f7472b3abb.gif",
@@ -277,20 +281,34 @@ class Roleplay(BaseCog):
         
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
-    async def hugs(self, ctx, *, user: discord.Member):
-        """Hugs a user!"""
+    async def fuck(self, ctx, *, user: discord.Member):
+        """Fucks a user!"""
 
         author = ctx.message.author
-        images = await self.config.hugs()
-
-        nekos = await self.fetch_nekos_life(ctx, "hug")
-        images.extend(nekos)
-
+        images = await self.config.fuck()
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} wants to fuck you, {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def hugs(self, ctx, *, user: discord.Member):
+        """Hugs a user!"""
+
+        author = ctx.message.author
+        images = await self.config.hugs()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} hugs {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -302,15 +320,12 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.cuddle()
-
-        nekos = await self.fetch_nekos_life(ctx, "cuddle")
-        images.extend(nekos)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} cuddles {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -339,15 +354,12 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.slap()
-
-        nekos = await self.fetch_nekos_life(ctx, "slap")
-        images.extend(nekos)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} slaps {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -359,15 +371,12 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.pat()
-
-        nekos = await self.fetch_nekos_life(ctx, "pat")
-        images.extend(nekos)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} pats {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -384,6 +393,7 @@ class Roleplay(BaseCog):
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} licks {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -400,6 +410,7 @@ class Roleplay(BaseCog):
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} highfives {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -411,15 +422,12 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.feed()
-
-        nekos = await self.fetch_nekos_life(ctx, "feed")
-        images.extend(nekos)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} feeds {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -431,15 +439,12 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.tickle()
-
-        nekos = await self.fetch_nekos_life(ctx, "tickle")
-        images.extend(nekos)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} tickles {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -451,15 +456,12 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.poke()
-
-        nekos = await self.fetch_nekos_life(ctx, "poke")
-        images.extend(nekos)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} pokes {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
@@ -471,15 +473,12 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.smug()
-
-        smug = await self.fetch_nekos_life(ctx, "smug")
-        images.extend(smug)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} is smug**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
