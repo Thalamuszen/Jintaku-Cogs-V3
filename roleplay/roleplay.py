@@ -327,6 +327,7 @@ class Roleplay(BaseCog):
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} kisses {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
