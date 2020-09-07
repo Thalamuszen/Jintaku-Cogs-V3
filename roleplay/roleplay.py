@@ -322,10 +322,6 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.kiss()
-
-        nekos = await self.fetch_nekos_life(ctx, "kiss")
-        images.extend(nekos)
-
         mn = len(images)
         i = randint(0, mn - 1)
 
