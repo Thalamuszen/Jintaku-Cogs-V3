@@ -24,6 +24,52 @@ class Roleplay(BaseCog):
     def __init__(self):
         self.config = Config.get_conf(self, identifier=842364413)
         default_global = {
+            "awkward": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/674611018671849491/AwkwardWidow.gif",
+            ],
+            "boop": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/677597379628630046/BoopBrig.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/677597387178639361/BoopSombra.gif",
+            ],
+            "cuddle": [
+                "https://cdn.weeb.sh/images/BkTe8U7v-.gif",
+                "https://cdn.weeb.sh/images/SykzL87D-.gif",
+                "https://cdn.weeb.sh/images/BywGX8caZ.gif",
+                "https://cdn.weeb.sh/images/SJceIU7wZ.gif",
+                "https://cdn.weeb.sh/images/SJn18IXP-.gif",
+                "https://cdn.weeb.sh/images/B1Qb88XvW.gif",
+                "https://cdn.weeb.sh/images/r1XEOymib.gif",
+                "https://cdn.weeb.sh/images/SJLkLImPb.gif",
+                "https://cdn.weeb.sh/images/SyUYOJ7iZ.gif",
+                "https://cdn.weeb.sh/images/rkBl8LmDZ.gif",
+                "https://cdn.weeb.sh/images/Byd1IUmP-.gif",
+                "https://cdn.weeb.sh/images/B1S1I87vZ.gif",
+                "https://cdn.weeb.sh/images/r1s9RqB7G.gif",
+                "https://cdn.weeb.sh/images/Hy5y88mPb.gif",
+                "https://cdn.weeb.sh/images/rkA6SU7w-.gif",
+                "https://cdn.weeb.sh/images/r1A77CZbz.gif",
+                "https://cdn.weeb.sh/images/SJYxIUmD-.gif",
+                "https://cdn.weeb.sh/images/H1SfI8XwW.gif",
+                "https://cdn.weeb.sh/images/rJCAH8XPb.gif",
+                "https://cdn.weeb.sh/images/By03IkXsZ.gif",
+                "https://cdn.weeb.sh/images/ryfyLL7D-.gif",
+                "https://cdn.weeb.sh/images/BJwpw_XLM.gif",
+                "https://cdn.weeb.sh/images/r1VzDkmjW.gif",
+                "https://cdn.weeb.sh/images/BJkABImvb.gif",
+                "https://cdn.weeb.sh/images/HkzArUmvZ.gif",
+                "https://cdn.weeb.sh/images/r1A77CZbz.gif",
+            ],
+            "dance": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992383179915302/DanceDva.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992387978330112/DanceDva2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992399420391484/DanceSymmetra.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992399516598277/DanceReaper.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992404033994758/DanceDva3.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673992406898835456/DanceTracer.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675437068893290526/DanceWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675437069648134176/DanceWidow2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675437070508097536/DanceGirls.gif",
+            ],
             "fuck": [
                 "https://cdn.discordapp.com/attachments/610429582415364116/670260329736830986/ezgif.com-video-to-gif.gif",
                 "https://cdn.discordapp.com/attachments/610429582415364116/670619115152605214/AnimeFuck.gif",
@@ -252,17 +298,6 @@ class Roleplay(BaseCog):
                 "https://cdn.discordapp.com/attachments/752524729470025788/752675169960722472/GooseHonk2.gif",
                 "https://cdn.discordapp.com/attachments/752524729470025788/752675174322798752/GooseWalk.gif",
             ],
-            "dance": [
-                "https://cdn.discordapp.com/attachments/670618563912007681/673992383179915302/DanceDva.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/673992387978330112/DanceDva2.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/673992399420391484/DanceSymmetra.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/673992399516598277/DanceReaper.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/673992404033994758/DanceDva3.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/673992406898835456/DanceTracer.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/675437068893290526/DanceWidow.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/675437069648134176/DanceWidow2.gif",
-                "https://cdn.discordapp.com/attachments/670618563912007681/675437070508097536/DanceGirls.gif",
-            ],
             "hugs": [
                 "https://img2.gelbooru.com/images/ff/63/ff63a3c4329fda2bf1e9704d4e150fea.gif",
                 "https://img2.gelbooru.com/images/2c/e8/2ce81403e0279f1a570711f7472b3abb.gif",
@@ -314,37 +349,52 @@ class Roleplay(BaseCog):
                 "https://media.giphy.com/media/KMQoRt68bFei4/giphy.gif",
                 "https://cdn.weeb.sh/images/BkZngAYtb.gif",
             ],
-            "cuddle": [
-                "https://cdn.weeb.sh/images/BkTe8U7v-.gif",
-                "https://cdn.weeb.sh/images/SykzL87D-.gif",
-                "https://cdn.weeb.sh/images/BywGX8caZ.gif",
-                "https://cdn.weeb.sh/images/SJceIU7wZ.gif",
-                "https://cdn.weeb.sh/images/SJn18IXP-.gif",
-                "https://cdn.weeb.sh/images/B1Qb88XvW.gif",
-                "https://cdn.weeb.sh/images/r1XEOymib.gif",
-                "https://cdn.weeb.sh/images/SJLkLImPb.gif",
-                "https://cdn.weeb.sh/images/SyUYOJ7iZ.gif",
-                "https://cdn.weeb.sh/images/rkBl8LmDZ.gif",
-                "https://cdn.weeb.sh/images/Byd1IUmP-.gif",
-                "https://cdn.weeb.sh/images/B1S1I87vZ.gif",
-                "https://cdn.weeb.sh/images/r1s9RqB7G.gif",
-                "https://cdn.weeb.sh/images/Hy5y88mPb.gif",
-                "https://cdn.weeb.sh/images/rkA6SU7w-.gif",
-                "https://cdn.weeb.sh/images/r1A77CZbz.gif",
-                "https://cdn.weeb.sh/images/SJYxIUmD-.gif",
-                "https://cdn.weeb.sh/images/H1SfI8XwW.gif",
-                "https://cdn.weeb.sh/images/rJCAH8XPb.gif",
-                "https://cdn.weeb.sh/images/By03IkXsZ.gif",
-                "https://cdn.weeb.sh/images/ryfyLL7D-.gif",
-                "https://cdn.weeb.sh/images/BJwpw_XLM.gif",
-                "https://cdn.weeb.sh/images/r1VzDkmjW.gif",
-                "https://cdn.weeb.sh/images/BJkABImvb.gif",
-                "https://cdn.weeb.sh/images/HkzArUmvZ.gif",
-                "https://cdn.weeb.sh/images/r1A77CZbz.gif",
+            "imdone": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673970865037377556/ImDoneDva.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673970864366157858/ImDoneBrig.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673970868426375209/ImDoneWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673971884932464645/ImOutDva.gif",
+            ],
+            "imout": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673129774381662248/ImOutReaper.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673532701684269077/ImoutSombra.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673971884932464645/ImOutDva.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673973388137725967/GoodbyeMcCree.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/676928207097692183/ImoutMei.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/676928770644639744/ImOutTracer.gif",
+            ],
+            "judge": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673979359979241485/JudgeAshe.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673979364815274014/JudgeHanzo.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673979389662330891/JudgeMei.gif",
+            ],
+            "kill": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673213622243033088/MercyKill.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673213660721577995/DFKill.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673213725754392615/McCreeKill.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673537303603314688/KillAshe.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673972876717588480/KillMercy.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673973863209631774/KillAna.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675435968987136048/KillMcCree.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675435976415510554/KillRein.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/675435980756484106/KillMercy.gif",
             ],
             "kiss": [
                 "https://cdn.discordapp.com/attachments/670618563912007681/673248796276293652/KissGenjiMercy.gif",
-                "https://78.media.tumblr.com/7255f36b2c31fac77542e8fe6837b408/tumblr_mokq94dAXR1s05qslo1_500.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248801418379292/KissMercyPharah.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248811870847000/KissTracerWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248816681582602/KissMercyWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248817516380161/KissTracerWidow2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248819344834562/KissWidow2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248821186396160/KissWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673248823081959464/KissWidowTracer.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673559465785819157/KissSombra.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/676924074521395265/KissTracerWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682310979606151214/KissMercyMercy.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682310988166725779/KissWidowDva.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682310991987343389/KissWidowDva3.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682310992625008700/KissWidowDva2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/719888420167483392/KissMercySombra.gif",
             ],
             "slap": [
                 "https://cdn.weeb.sh/images/H16aQJFvb.gif",
@@ -516,8 +566,76 @@ class Roleplay(BaseCog):
         
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
+    async def awkward(self, ctx):
+        """Awkward..."""
+
+        author = ctx.message.author
+        images = await self.config.awkward()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**Well, this is awkward..**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def boop(self, ctx, *, user: discord.Member):
+        """Boops a user"""
+
+        author = ctx.message.author
+        images = await self.config.boop()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} is booping you, {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+                        
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def cuddle(self, ctx, *, user: discord.Member):
+        """Cuddles a user"""
+
+        author = ctx.message.author
+        images = await self.config.cuddle()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} cuddles {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def dance(self, ctx, *, user: discord.Member):
+        """Dance with somebody"""
+
+        author = ctx.message.author
+        images = await self.config.dance()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} wants to dance with {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+           
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
     async def fuck(self, ctx, *, user: discord.Member):
-        """Fucks a user!"""
+        """Fucks a user"""
 
         author = ctx.message.author
         images = await self.config.fuck()
@@ -534,7 +652,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def fuckself(self, ctx):
-        """Fucks yourself!"""
+        """Fucks yourself"""
 
         author = ctx.message.author
         images = await self.config.fuckself()
@@ -564,28 +682,11 @@ class Roleplay(BaseCog):
         embed.description = f"**HONK**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
-    
-    @commands.command()
-    @commands.bot_has_permissions(embed_links=True)
-    async def dance(self, ctx, *, user: discord.Member):
-        """Dance with somebody!"""
 
-        author = ctx.message.author
-        images = await self.config.dance()
-        mn = len(images)
-        i = randint(0, mn - 1)
-
-        # Build Embed
-        embed = discord.Embed()
-        embed.colour=discord.Colour(0x4fe0e0)
-        embed.description = f"**{author.mention} wants to dance with {user.mention}**"
-        embed.set_image(url=images[i])
-        await ctx.send(embed=embed)
-           
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def hugs(self, ctx, *, user: discord.Member):
-        """Hugs a user!"""
+        """Hugs a user"""
 
         author = ctx.message.author
         images = await self.config.hugs()
@@ -598,28 +699,79 @@ class Roleplay(BaseCog):
         embed.description = f"**{author.mention} hugs {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
-
+        
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
-    async def cuddle(self, ctx, *, user: discord.Member):
-        """Cuddles a user!"""
+    async def imdone(self, ctx):
+        """When you've had enough!"""
 
         author = ctx.message.author
-        images = await self.config.cuddle()
+        images = await self.config.imdone()
         mn = len(images)
         i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
         embed.colour=discord.Colour(0x4fe0e0)
-        embed.description = f"**{author.mention} cuddles {user.mention}**"
+        embed.description = f"**{author.mention} is done**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def imout(self, ctx):
+        """When you're out"""
 
+        author = ctx.message.author
+        images = await self.config.imout()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} is out**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def judge(self, ctx, *, user: discord.Member):
+        """Judging a user"""
+
+        author = ctx.message.author
+        images = await self.config.judge()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} is judging you, {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+                            
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def kill(self, ctx, *, user: discord.Member):
+        """Kills a user"""
+
+        author = ctx.message.author
+        images = await self.config.kill()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} killed {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+              
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def kiss(self, ctx, *, user: discord.Member):
-        """Kiss a user!"""
+        """Kiss a user"""
 
         author = ctx.message.author
         images = await self.config.kiss()
