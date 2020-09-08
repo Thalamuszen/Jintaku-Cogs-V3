@@ -396,7 +396,17 @@ class Roleplay(BaseCog):
                 "https://cdn.discordapp.com/attachments/670618563912007681/682310992625008700/KissWidowDva2.gif",
                 "https://cdn.discordapp.com/attachments/670618563912007681/719888420167483392/KissMercySombra.gif",
             ],
+            "shook": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/673128985789595651/DvaMeiShocked.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673538279597146122/ShockedFrenchPolice.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673538280603516928/ShockedHanzo.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673538294260170772/ShockedMei.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673538299280752650/ShockedTracer.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673538307417702400/ShockedTracer2.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/673561350768820234/ShockedSymmetra.gif",
+            ],
             "slap": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/709732196658839592/SlapDva.gif",
                 "https://cdn.weeb.sh/images/H16aQJFvb.gif",
                 "https://img2.gelbooru.com/images/d2/2c/d22c2eedd00914ce38efb46d797be031.gif",
                 "https://safebooru.org//images/192/fb1c45872a172ab384a22b9d9089b861d366564c.gif",
@@ -441,6 +451,12 @@ class Roleplay(BaseCog):
                 "https://cdn.weeb.sh/images/rkaqm1twZ.gif",
                 "https://cdn.weeb.sh/images/ryn_Zg5JG.gif",
                 "https://cdn.weeb.sh/images/SJ-CQytvW.gif",
+            ],
+            "spank": [
+                "https://cdn.discordapp.com/attachments/670618563912007681/676924829546315776/SpankAshe.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/677194935056728074/SpankWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682311660068667424/SpankDva.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682311672400183364/SpankTracer.gif",
             ],
             "pat": [
                 "https://cdn.weeb.sh/images/r180y1Yvb.gif",
@@ -737,7 +753,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def judge(self, ctx, *, user: discord.Member):
-        """Judging a user"""
+        """Judge a user"""
 
         author = ctx.message.author
         images = await self.config.judge()
@@ -784,11 +800,28 @@ class Roleplay(BaseCog):
         embed.description = f"**{author.mention} kisses {user.mention}**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def shook(self, ctx):
+        """When you're shook (Shocked)"""
 
+        author = ctx.message.author
+        images = await self.config.shook()
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} is shook**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+        
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def slap(self, ctx, *, user: discord.Member):
-        """Slaps a user!"""
+        """Slaps a user"""
 
         author = ctx.message.author
         images = await self.config.slap()
@@ -805,7 +838,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def pat(self, ctx, *, user: discord.Member):
-        """Pats a user!"""
+        """Pats a user"""
 
         author = ctx.message.author
         images = await self.config.pat()
@@ -822,7 +855,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def lick(self, ctx, *, user: discord.Member):
-        """Licks a user!"""
+        """Licks a user"""
 
         author = ctx.message.author
         images = await self.config.lick()
@@ -839,7 +872,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def highfive(self, ctx, *, user: discord.Member):
-        """Highfives a user!"""
+        """Highfives a user"""
 
         author = ctx.message.author
         images = await self.config.highfive()
@@ -856,7 +889,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def feed(self, ctx, *, user: discord.Member):
-        """Feeds a user!"""
+        """Feeds a user"""
 
         author = ctx.message.author
         images = await self.config.feed()
@@ -873,7 +906,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def tickle(self, ctx, *, user: discord.Member):
-        """Tickles a user!"""
+        """Tickles a user"""
 
         author = ctx.message.author
         images = await self.config.tickle()
@@ -890,7 +923,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def poke(self, ctx, *, user: discord.Member):
-        """Pokes a user!"""
+        """Pokes a user"""
 
         author = ctx.message.author
         images = await self.config.poke()
@@ -907,7 +940,7 @@ class Roleplay(BaseCog):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def smug(self, ctx):
-        """Be smug towards someone!"""
+        """Be smug"""
 
         author = ctx.message.author
         images = await self.config.smug()
