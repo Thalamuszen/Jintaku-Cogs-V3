@@ -977,7 +977,7 @@ class BooruCore:
             for page_num, booru in enumerate(data, 1):
 
                 # Set colour for each board
-                color = {"Gelbooru": 3395583, "Danbooru": 3395583, "Konachan": 8745592, "Yandere": 2236962, "Rule34": 339933, "Safebooru": 000000, "e621": 000000, "Reddit": 000000, "Oboobs": 000000, "Obutts": 000000, "Nekos.life": 000000}
+                color = {"Gelbooru": 5234912, "Danbooru": 5234912, "Konachan": 5234912, "Yandere": 5234912, "Rule34": 5234912, "Safebooru": 5234912, "e621": 5234912, "Reddit": 5234912, "Oboobs": 5234912, "Obutts": 5234912, "Nekos.life": 5234912}
 
                 embed = discord.Embed()
                 embed.color = color[booru["provider"]]
@@ -988,9 +988,9 @@ class BooruCore:
                 embed.add_field(name="Rating", value=booru["rating"])
                 embed.add_field(name="Score", value=booru["score"])
                 if booru["provider"] == "Reddit":
-                    embed.set_footer(text=f"{page_num}/{num_pages} If image doesn't appear, it may be a webm or too big, Powered by {booru['data']['subreddit_name_prefixed']}")
+                    embed.set_footer(text=f"{page_num}/{num_pages} If image doesn't appear, it may be a webm or too big. If so, click the Title link")
                 else:
-                    embed.set_footer(text=f"{page_num}/{num_pages} If image doesn't appear, it may be a webm or too big, Powered by {booru['provider']}")
+                    embed.set_footer(text=f"{page_num}/{num_pages} If image doesn't appear, it may be a webm or too big. If so, click the Title link")
                 embeds.append(embed)
             try:
                 await menu(ctx, pages=embeds, controls=DEFAULT_CONTROLS, message=None, page=i, timeout=15)
@@ -1002,7 +1002,7 @@ class BooruCore:
             booru = data[i]
 
             # Set colour for each board
-            color = {"Gelbooru": 3395583, "Danbooru": 3395583, "Konachan": 8745592, "Yandere": 2236962, "Rule34": 339933, "Safebooru": 000000, "e621": 000000, "Reddit": 000000, "Oboobs": 000000, "Obutts": 000000}
+            color = {"Gelbooru": 5234912, "Danbooru": 5234912, "Konachan": 5234912, "Yandere": 5234912, "Rule34": 5234912, "Safebooru": 5234912, "e621": 5234912, "Reddit": 5234912, "Oboobs": 5234912, "Obutts": 5234912}
 
             embed = discord.Embed()
             embed.color = color[booru["provider"]]
