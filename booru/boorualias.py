@@ -31,3 +31,15 @@ class Boorualias:
         boards = ["dan", "gel", "kon", "yan", "safe", "gay"]
 
         await self.generic_alias_booru(ctx, boards, tag)
+        
+    @commands.command()
+    @commands.guild_only()
+    @commands.bot_has_permissions(embed_links=True, add_reactions=True)
+    async def yuri(self, ctx, *, tag=""):
+        """Yuri images"""
+
+        tag_default = " yuri"
+        tag += tag_default
+        boards = ["dan", "gel", "kon", "yan", "safe", "gay"]
+        
+        await self.generic_alias_booru(ctx, boards, tag)
