@@ -597,24 +597,7 @@ class Roleplay(BaseCog):
         embed.colour=discord.Colour(0x4fe0e0)
         embed.description = f"**{author.mention} is booping you, {user.mention}**"
         embed.set_image(url=images[i])
-        await ctx.send(embed=embed)
-                        
-    @commands.command()
-    @commands.bot_has_permissions(embed_links=True)
-    async def cuddle(self, ctx, *, user: discord.Member):
-        """Cuddles a user"""
-
-        author = ctx.message.author
-        images = await self.config.cuddle()
-        mn = len(images)
-        i = randint(0, mn - 1)
-
-        # Build Embed
-        embed = discord.Embed()
-        embed.colour=discord.Colour(0x4fe0e0)
-        embed.description = f"**{author.mention} cuddles {user.mention}**"
-        embed.set_image(url=images[i])
-        await ctx.send(embed=embed)
+        await ctx.send(embed=embed)               
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
