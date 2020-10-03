@@ -808,8 +808,7 @@ class Roleplay(BaseCog):
         author = ctx.message.author
         images = await self.config.spank()
         
-        spank = await self.fetch_nekos_life(ctx, "spank")
-        images.extend(spank)
+
         
         mn = len(images)
         i = randint(0, mn - 1)
