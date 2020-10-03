@@ -27,6 +27,9 @@ class Roleplay(BaseCog):
             "awkward": [
                 "https://cdn.discordapp.com/attachments/670618563912007681/674611018671849491/AwkwardWidow.gif",
             ],
+            "baka": [
+                "https://64.media.tumblr.com/4119f5dcb6fe544bc402f35c3acd537d/tumblr_oqb7jhWCwF1uw0tt9o1_500.gif",
+            ],
             "boop": [
                 "https://cdn.discordapp.com/attachments/670618563912007681/677597379628630046/BoopBrig.gif",
                 "https://cdn.discordapp.com/attachments/670618563912007681/677597387178639361/BoopSombra.gif",
@@ -674,6 +677,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.hugs()
+        
+        nekos = await self.fetch_nekos_life(ctx, "hug")
+        images.extend(nekos)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -759,6 +766,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.kiss()
+        
+        nekos = await self.fetch_nekos_life(ctx, "kiss")
+        images.extend(nekos)        
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -793,6 +804,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.slap()
+        
+        nekos = await self.fetch_nekos_life(ctx, "slap")
+        images.extend(nekos)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -831,6 +846,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.pat()
+        
+        nekos = await self.fetch_nekos_life(ctx, "pat")
+        images.extend(nekos)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -882,6 +901,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.feed()
+        
+        nekos = await self.fetch_nekos_life(ctx, "feed")
+        images.extend(nekos)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -899,6 +922,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.tickle()
+        
+        nekos = await self.fetch_nekos_life(ctx, "tickle")
+        images.extend(nekos)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -916,6 +943,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.poke()
+        
+        nekos = await self.fetch_nekos_life(ctx, "poke")
+        images.extend(nekos)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -933,6 +964,10 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         images = await self.config.smug()
+        
+        smug = await self.fetch_nekos_life(ctx, "smug")
+        images.extend(smug)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -942,7 +977,28 @@ class Roleplay(BaseCog):
         embed.description = f"**{author.mention} is smug**"
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
+        
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def baka(self, ctx, *, user: discord.Member):
+        """Baka!"""
 
+        author = ctx.message.author
+        images = await self.config.baka()
+        
+        nekos = await self.fetch_nekos_life(ctx, "baka")
+        images.extend(nekos)
+        
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
+        embed.description = f"**{author.mention} thinks you're an idiot {user.mention}**"
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+        
     async def fetch_nekos_life(self, ctx, rp_action):
 
         async with aiohttp.ClientSession() as session:
