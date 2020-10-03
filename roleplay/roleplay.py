@@ -814,7 +814,7 @@ class Roleplay(BaseCog):
         nekos = await self.fetch_nekos_life_nsfw(ctx, "spank")
         images.extend(nekos)
         
-        mn = len(images)
+        mn = len(nekos)
         i = randint(0, mn - 1)
 
         # Build Embed
