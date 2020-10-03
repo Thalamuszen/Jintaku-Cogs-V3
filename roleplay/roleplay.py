@@ -439,6 +439,9 @@ class Roleplay(BaseCog):
             ],
             "spank": [
                 "https://cdn.discordapp.com/attachments/670618563912007681/676924829546315776/SpankAshe.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/677194935056728074/SpankWidow.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682311660068667424/SpankDva.gif",
+                "https://cdn.discordapp.com/attachments/670618563912007681/682311672400183364/SpankTracer.gif",
             ],
             "pat": [
                 "https://cdn.weeb.sh/images/r180y1Yvb.gif",
