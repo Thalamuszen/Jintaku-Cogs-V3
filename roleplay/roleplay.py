@@ -811,6 +811,9 @@ class Roleplay(BaseCog):
         author = ctx.message.author
         images = await self.config.spank()
         
+        nekos = await self.fetch_nekos_life_nsfw(ctx, "spank")
+        images.extend(nekos)
+        
         mn = len(images)
         i = randint(0, mn - 1)
 
@@ -953,4 +956,17 @@ class Roleplay(BaseCog):
 
         if content["data"]["status"]["code"] == 200:
             return content["data"]["response"]["urls"]
+     
+    async def fetch_nekos_life_nsfw(self, ctx, rp_action):
 
+        async with aiohttp.ClientSession() as session:
+            async with session.get(f"https://api.nekos.dev/api/v3/images/nsfw/gif/{rp_action}/?count=20") as resp:
+                try:
+                    content = await resp.json(content_type=None)
+                except (ValueError, aiohttp.ContentTypeError) as ex:
+                    log.debug("Pruned by exception, error below:")
+                    log.debug(ex)
+                    return []
+
+        if content["data"]["status"]["code"] == 200:
+            return content["data"]["response"]["urls"]
