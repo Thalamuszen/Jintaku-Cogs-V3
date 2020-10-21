@@ -272,6 +272,9 @@ class Roleplay(BaseCog):
                 "https://cdn.discordapp.com/attachments/752524729470025788/752675168605831218/GooseHonk1.gif",
                 "https://cdn.discordapp.com/attachments/752524729470025788/752675169960722472/GooseHonk2.gif",
                 "https://cdn.discordapp.com/attachments/752524729470025788/752675174322798752/GooseWalk.gif",
+                "https://cdn.discordapp.com/attachments/663113235183960108/768528450746187796/GooseBell.gif",
+                "https://cdn.discordapp.com/attachments/663113235183960108/768528460808323072/GooseChase.gif",
+                "https://cdn.discordapp.com/attachments/663113235183960108/768528470610673695/GooseHonk.gif",
             ],
             "hugs": [
                 "https://img2.gelbooru.com/images/ff/63/ff63a3c4329fda2bf1e9704d4e150fea.gif",
