@@ -691,7 +691,7 @@ class ConversationGames(BaseCog):
                 "Put my picture as your mobile wallpaper for three days.",
                 "Send a selfie of yours while keeping your finger in your nose.",
                 "Call to any random number and do non-stop conversation for 2 minutes.",
-                "Send me the message of your first message that sends to me.",
+                "Send me the first message from our DM's that you sent to me.",
                 "Make a video call to me and do 20 situps continuously.",
                 "Send next five text messages to your friends using your elbow only.",
                 "Wear your dress upside down and send that picture to me.",
