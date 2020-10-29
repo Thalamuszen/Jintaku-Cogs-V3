@@ -715,6 +715,7 @@ class ConversationGames(BaseCog):
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.title = "Would you rather.."
         embed.description = strings[i]
         await ctx.send(embed=embed)
@@ -730,6 +731,7 @@ class ConversationGames(BaseCog):
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.title = "Never have I ever.."
         embed.description = strings[i]
         await ctx.send(embed=embed)
@@ -755,6 +757,7 @@ class ConversationGames(BaseCog):
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.title = f"{author.name} asked {user.name}"
         embed.description = strings[rs].format(name=name)
         await ctx.send(embed=embed)
@@ -780,6 +783,7 @@ class ConversationGames(BaseCog):
 
         # Build Embed
         embed = discord.Embed()
+        embed.colour=discord.Colour(0x4fe0e0)
         embed.title = f"{author.name} dared {user.name}"
         embed.description = strings[rs].format(name=name)
         await ctx.send(embed=embed)
